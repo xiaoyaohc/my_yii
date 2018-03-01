@@ -63,8 +63,13 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
+        'allowedIPs'=>['10.82.8.252'],//增加允许访问的ip
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
+    ];
+    //开启后台模块
+    $config['modules']['admin'] = [
+        'class'=>'app\modules\admin\Admin',
     ];
 }
 
